@@ -1,58 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Understanding Blazor Server Render Modes - Garrett London</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100">
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
     <nav class="bg-white shadow-lg p-4">
         <div class="container mx-auto">
-            <a href="../index.html" class="text-2xl font-bold text-gray-800">Garrett London</a>
+            <a href="../index.html" class="text-2xl font-bold text-gray-800">Home</a>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-4 py-8 flex-grow">
         <article class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-8">
             <h1 class="text-4xl font-bold mb-4">Understanding Blazor Server Render Modes</h1>
             <div class="text-gray-500 mb-8">Published: March 19, 2024</div>
-            
+
             <div class="prose lg:prose-xl">
                 <p class="mb-4">
-                    Blazor Server in .NET 8 introduces enhanced render modes that give developers more control over how components are rendered and interactive. These render modes are crucial for optimizing performance and user experience.
+                    Blazor Server in .NET 8 introduces enhanced render modes that give developers more control over how
+                    components are rendered and interactive. These render modes are crucial for optimizing performance
+                    and user experience.
                 </p>
 
                 <h2 class="text-2xl font-bold mt-6 mb-4">The Main Render Modes</h2>
-                
+
                 <ul class="list-disc pl-6 mb-6">
                     <li class="mb-2">
-                        <strong>Server:</strong> The traditional Blazor Server rendering mode where components are rendered on the server and maintained over a SignalR connection.
+                        <strong>Server:</strong> The traditional Blazor Server rendering mode where components are
+                        rendered on the server and maintained over a SignalR connection.
                     </li>
                     <li class="mb-2">
-                        <strong>Static:</strong> Components are rendered once on the server with no interactivity. Perfect for static content that doesn't need user interaction.
+                        <strong>Static:</strong> Components are rendered once on the server with no interactivity.
+                        Perfect for static content that doesn't need user interaction.
                     </li>
                     <li class="mb-2">
-                        <strong>Interactive:</strong> Components are initially rendered on the server but then become interactive on the client, maintaining a SignalR connection.
+                        <strong>Interactive:</strong> Components are initially rendered on the server but then become
+                        interactive on the client, maintaining a SignalR connection.
                     </li>
                 </ul>
 
                 <h2 class="text-2xl font-bold mt-6 mb-4">When to Use Each Mode</h2>
-                
+
                 <p class="mb-4">
-                    Choose <strong>Server</strong> mode when you need real-time updates and don't want to download the entire Blazor runtime to the client. This is great for internal applications or when bandwidth is a concern.
+                    Choose <strong>Server</strong> mode when you need real-time updates and don't want to download the
+                    entire Blazor runtime to the client. This is great for internal applications or when bandwidth is a
+                    concern.
                 </p>
-                
+
                 <p class="mb-4">
-                    Use <strong>Static</strong> mode for components that display information but don't need interactivity. This improves performance by reducing the number of SignalR connections.
+                    Use <strong>Static</strong> mode for components that display information but don't need
+                    interactivity. This improves performance by reducing the number of SignalR connections.
                 </p>
-                
+
                 <p class="mb-4">
-                    Pick <strong>Interactive</strong> mode when you need the best of both worlds - server-side rendering for fast initial page loads and client-side interactivity for responsive user interactions.
+                    Pick <strong>Interactive</strong> mode when you need the best of both worlds - server-side rendering
+                    for fast initial page loads and client-side interactivity for responsive user interactions.
                 </p>
 
                 <h2 class="text-2xl font-bold mt-6 mb-4">Code Example</h2>
-                
+
                 <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto">
 <code>@page "/counter"
 @rendermode InteractiveServer
@@ -77,10 +88,11 @@
         </article>
     </main>
 
-    <footer class="bg-gray-800 text-white py-6 mt-12">
+    <footer class="bg-gray-800 text-white py-6 mt-auto">
         <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 My Tech Blog. All rights reserved.</p>
+            <p>&copy; 2024 Garrett London. All rights reserved.</p>
         </div>
     </footer>
 </body>
-</html> 
+
+</html>
